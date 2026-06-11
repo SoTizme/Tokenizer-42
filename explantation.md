@@ -51,3 +51,71 @@ Here's every part of your contract explained in plain language, the way you shou
 ---
 
 Once you've deployed, come back and I'll walk you through **live demo practice** — showing the evaluator mint, transfer, burn, and balanceOf in Remix in real time.
+
+
+Let me build you two clean visual diagrams — one for Ethereum, one for your project flow.I'll build you two clear interactive diagrams — first how Ethereum works, then how your project fits together.Now here's your project's own workflow — from writing the contract to the evaluator testing it.The visualizer seems to be having issues right now. Let me give you the same mental model as a clean text diagram instead:
+
+---
+
+## Ethereum — the mental model
+
+```
+YOUR WALLET
+(address + private key)
+      |
+      | you sign a transaction
+      ↓
+TRANSACTION
+(what to do + gas fee)
+      |
+      | broadcast to
+      ↓
+ETHEREUM NETWORK
+(thousands of computers worldwide)
+      |
+      | they validate + agree
+      ↓
+BLOCK
+(a group of confirmed transactions, chained to all previous blocks)
+      |
+      | if the tx calls code
+      ↓
+SMART CONTRACT
+(code that runs automatically — like your ShT42 token)
+```
+
+**Key idea:** Nobody controls Ethereum. Once your contract is deployed, it runs forever exactly as written. Nobody can delete it.
+
+---
+
+## Your project — step by step
+
+```
+1. WRITE
+   ShilalToken42.sol in Remix IDE
+
+2. COMPILE
+   Remix checks for errors → builds the ABI
+   (ABI = the list of functions others can call)
+
+3. DEPLOY
+   MetaMask (Sepolia testnet) → pays gas in test ETH
+   → contract gets a permanent address like 0xABCD...
+
+4. ON-CHAIN
+   Your token now lives on Sepolia forever
+   Anyone can call transfer(), mint(), burn()
+
+5. PUBLISH
+   Add contract address to Etherscan
+   → evaluator can see your token, ticker ShT42, all transactions
+
+6. EVALUATION
+   Open Remix → show deployed contract → demonstrate:
+   • balanceOf(your address) → see your 1,000,000 tokens
+   • transfer(another address, 100) → send 100 ShT42
+   • mint(address, 500) → owner creates 500 new tokens
+   • burn(200) → destroy 200 tokens from your balance
+```
+
+---
