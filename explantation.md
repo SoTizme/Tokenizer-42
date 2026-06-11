@@ -55,6 +55,8 @@ Once you've deployed, come back and I'll walk you through **live demo practice**
 
 Let me build you two clean visual diagrams — one for Ethereum, one for your project flow.I'll build you two clear interactive diagrams — first how Ethereum works, then how your project fits together.Now here's your project's own workflow — from writing the contract to the evaluator testing it.The visualizer seems to be having issues right now. Let me give you the same mental model as a clean text diagram instead:
 
+<img src="images/workflow.svg">
+
 ---
 
 ## Ethereum — the mental model
