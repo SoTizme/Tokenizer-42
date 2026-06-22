@@ -1,52 +1,119 @@
 # ShilalToken42 (ShT42)
 
-A simple ERC-20 token created as part of the **42 Tokenizer** project, in partnership with BNB Chain.
+A simple **ERC-20 fungible token** developed for the **42 Tokenizer** project in partnership with **BNB Chain**.
 
 ---
 
-## Choices made
+## Project Overview
 
-### Blockchain platform — Ethereum (Sepolia testnet)
-I chose Ethereum because it is the most widely documented smart-contract platform, making it ideal for a first token project. The **Sepolia** testnet was used so that no real money is involved at any point.
+**ShilalToken42** (ticker: **ShT42**) is an educational blockchain project deployed on the **Ethereum Sepolia testnet**.
 
-### Token standard — ERC-20
-ERC-20 is the dominant fungible-token standard on Ethereum. It provides a well-audited interface (transfer, approve, allowance, etc.) and is natively supported by wallets, explorers, and DeFi tooling.
+The goal of this project is to demonstrate the complete lifecycle of a standard ERC-20 token, including:
 
-### Language — Solidity 0.8.20
-Solidity is the official language for Ethereum smart contracts. Version 0.8.x includes built-in overflow/underflow protection, removing the need for external SafeMath libraries.
+* Deployment
+* Minting new tokens
+* Transferring tokens
+* Tracking balances
+* Burning tokens
 
-### Framework — OpenZeppelin + Remix IDE
-OpenZeppelin's battle-tested ERC-20 and Ownable base contracts were used to avoid reinventing the wheel and to keep the code secure. Remix IDE was chosen for its zero-setup browser-based workflow.
-
-### Security considerations
-- **Ownable**: only the deployer can mint new tokens, preventing arbitrary inflation.
-- **No transfer restrictions**: transfers are intentionally unrestricted since this is an educational token.
-- Real money was **never** used; all testing was done on Sepolia with free test ETH.
+This project was created for learning purposes only and does not involve real money.
 
 ---
 
-## Repository structure
+## Key Features
 
+* Built using OpenZeppelin's audited ERC-20 implementation
+* Owner-controlled minting
+* Token transfers between users
+* Token burning supported
+* Deployed and tested on Sepolia testnet
+
+---
+
+## Technical Choices
+
+| Category         | Choice                         |
+| ---------------- | ------------------------------ |
+| Blockchain       | Ethereum Sepolia               |
+| Token Standard   | ERC-20                         |
+| Language         | Solidity ^0.8.20               |
+| Libraries        | OpenZeppelin (ERC20 + Ownable) |
+| Development Tool | Remix IDE                      |
+| Wallet           | MetaMask                       |
+
+---
+
+## Repository Structure
+
+```txt
+README.md
+│
+├── code/
+│   └── ShilalToken42.sol
+│
+├── deployment/
+│   └── how_to_deploy.md
+│
+└── documentation/
+    └── whitepaper.md
 ```
-README.md               ← this file
-code/
-    ShilalToken42.sol   ← smart contract source
-deployment/
-    deploy_info.md      ← contract address, network, deployment steps
-documentation/
-    whitepaper.md       ← token overview and usage guide
-```
 
 ---
 
-## Contract info
+## Learning Objectives
 
-| Field            | Value                          |
-|------------------|-------------------------------|
-| Token name       | ShilalToken42                 |
-| Ticker           | ShT42                         |
-| Standard         | ERC-20                        |
-| Network          | Ethereum Sepolia testnet       |
-| Contract address | *(see deployment/deploy_info.md)* |
-| Decimals         | 18                            |
-| Initial supply   | 1,000,000 ShT42               |
+This project demonstrates:
+
+* ERC-20 token creation
+* Smart contract deployment
+* Blockchain transaction execution
+* Token management (mint, transfer, burn)
+* Testnet development workflow
+
+---
+
+## Contract Information
+
+| Field            | Value                             |
+| ---------------- | --------------------------------- |
+| Name             | ShilalToken42                     |
+| Symbol           | ShT42                             |
+| Network          | Ethereum Sepolia                  |
+| Contract Address | See `deployment/how_to_deploy.md` |
+
+---
+
+## Quick Demo Guide
+
+For complete deployment instructions and demonstrations:
+
+See `deployment/how_to_deploy.md`
+
+This guide explains:
+
+* Wallet setup
+* Sepolia configuration
+* Deployment process
+* Contract interaction
+* Token usage
+
+---
+
+## Documentation
+
+Detailed technical documentation is available in:
+
+`documentation/whitepaper.md`
+
+---
+
+## Notes
+
+* This project uses **Sepolia testnet only**
+* No real ETH or real financial value is involved
+* Keep the deployer wallet secure
+* Avoid using `renounceOwnership()` unless intentionally removing owner permissions
+
+---
+
+Developed as part of the **42 Tokenizer Project**.
